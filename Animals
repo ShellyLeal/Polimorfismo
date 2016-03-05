@@ -1,0 +1,44 @@
+class Animals {
+ private String name;
+ private String sound;
+ Animals(String aname) {name=aname;}
+ public String getName() {return name;}
+ public String animalSound(){return sound;}
+
+ public static void main(String argv[]){
+	 Cow c = new Cow("cow ");
+	 Duck d = new Duck("duck ");
+	 Fox f = new Fox("fox ");
+	Animals soundArray[]={c,d,f};
+	for(int i=0; i<soundArray.length; i++){
+		System.out.println("The "+ soundArray[i].getName()+"does "+soundArray[i].animalSound()+"\n");
+  }
+ }
+}
+
+class Cow extends Animals {
+	Cow(String aName){
+		super(aName);
+    }
+	public String animalSound() {
+		return "moo.";
+	}
+}
+
+class Duck extends Animals {
+	Duck(String aName){
+		super(aName);
+    }
+	public String animalSound() {
+		return "quack.";
+	}
+}
+
+class Fox extends Animals {
+	Fox(String aName){
+		super(aName);
+    }
+	public String animalSound() {
+		return "???";
+	}
+}
