@@ -1,0 +1,42 @@
+class Volume {
+ private String name;
+ Volume(String aname) {name=aname;}
+ public String getName() {return name;}
+ public float calculateVolume(){return 0.0f;}
+
+ public static void main(String argv[]){
+	 Esfera e = new Esfera(" Esfera E");
+	 Cubo c = new Cubo(" Cubo C");
+	Volume volumeArray[]={e, c};
+	for(int i=0; i<volumeArray.length; i++){
+		System.out.println("The area of"+ volumeArray[i].getName()+" is "+volumeArray[i].calculateVolume()+" cm^3.\n");
+  }
+ }
+}
+
+class Esfera extends Volume {
+	private int radius;
+	Esfera(String aName){
+		super(aName);
+		radius = 2;
+   	}
+	public float calculateVolume() {
+		float volume;
+		volume = (float) (4 * 3.14 * radius * radius * radius / 3);
+		return volume;
+	}
+}
+
+class Cubo extends Volume {
+	private int size;
+	Cubo(String aName){
+		super(aName);
+		size = 2;
+   	}
+	public float calculateVolume() {
+		float volume;
+		volume = size* size *size;
+		return volume;
+	}
+}
+
